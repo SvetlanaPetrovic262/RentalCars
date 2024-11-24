@@ -13,11 +13,11 @@ namespace RentalCars.Controllers
 
             if (!string.IsNullOrEmpty(make))
             {
-                cars = cars.Where(c => c.Make.Contains(make));
+                cars = cars.Where(c => c.Make.ToLower() == make.ToLower().Trim());
             }
             if (!string.IsNullOrEmpty(model))
             {
-                cars = cars.Where(c => c.Model.Contains(model));
+                cars = cars.Where(c => c.Model.ToLower() == model.ToLower().Trim());
             }
 
                 if (minPrice.HasValue)
@@ -52,7 +52,8 @@ namespace RentalCars.Controllers
                     Make = "Audi",
                     Model = "A4",
                     PricePerDay =30.5m,
-                    IsAvailable = true
+                    IsAvailable = true,
+                    ImageUrl = "audiblue.jpg"
 
                 };
                 Car B5 = new Car()
@@ -61,7 +62,8 @@ namespace RentalCars.Controllers
                     Make = "BMW",
                     Model = "B5",
                     PricePerDay =50.5m,
-                    IsAvailable = false
+                    IsAvailable = false,
+                    ImageUrl = "bmwblue.jpg"
 
                 };
 
@@ -71,7 +73,8 @@ namespace RentalCars.Controllers
                     Make = "Mercedes",
                     Model = "M6",
                     PricePerDay =40.5m,
-                    IsAvailable = false
+                    IsAvailable = false,
+                    ImageUrl = "mercedesgrey.jpg"
 
                 };
                 Car M7 = new Car()
@@ -80,7 +83,8 @@ namespace RentalCars.Controllers
                     Make = "Mercedes",
                     Model = "M7",
                     PricePerDay =55.5m,
-                    IsAvailable = true
+                    IsAvailable = true,
+                    ImageUrl = "mercedesyellow.jpg"
 
                 };
 
