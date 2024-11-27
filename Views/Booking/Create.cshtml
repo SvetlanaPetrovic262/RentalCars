@@ -5,12 +5,13 @@
 }
 
 <h1 class="page-title">Book a Car</h1>
-
+<div class="col-md-6 text-center">
 <div class="booking-container">
     <form asp-action="Create" method="post" class="booking-form">
-        <input type="hidden" asp-for="CardId" />
+        <input type="hidden" asp-for="CarId" />
         <input type="hidden" asp-for="UserId" />
         <input type="hidden" asp-for="BookingId" />
+        <input type="hidden" asp-for="TotalPrice"/>
 
         <div class="form-group">
             <label asp-for="StartDate" class="form-label"></label>
@@ -24,23 +25,25 @@
             <span asp-validation-for="EndDate" class="validation-message"></span>
         </div>
 
-        <div class="form-group">
+        @* <div class="form-group">
             <label>Total Price:</label>
-            <span class="price-display">$@Model.TotalPrice</span>
-        </div>
+            ili <span class="price-display">$@Model.TotalPrice</span>
+            ili <input asp=for="TotalPrice" type="number" class="form-input"/>
+        </div> *@
 
-        <button type="submit" class="btn-submit">Confirm Booking</button>
+        <button type="submit" class="btn-submit btn-danger">Confirm Booking</button>
     </form>
 </div>
+</div>
 
-@* <div asp-validation-summary="All" class="validation-summary"></div> *@
+<div asp-validation-summary="All" class="validation-summary"></div> 
 
 <style>
-    body{
+    /* .booking-container{
         background-color: powderblue;
-        margin: 0;
-        padding: 0;
-    }
+        margin: 10px;
+        padding: 300px;
+    } */
 
     .page-title{
         text-align:center;
