@@ -46,6 +46,7 @@ namespace RentalCars.Controllers
             {
                 return NotFound("Booking not found.");
             }
+            booking.Car = CarsForBooking().SingleOrDefault(x => x.CarId == booking.CarId);
             return View(booking);
         }
         public IActionResult Return()
